@@ -8,6 +8,12 @@ module.exports = (config) => {
   config.set({
     autoWatch: false,
     browsers: ['ChromeHeadless'],
+    customLaunchers: {
+      Chrome_Without_Sandbox: {
+        base: 'Chrome',
+        flags: ['--no-sandbox', '--disable-setuid-sandbox'],
+      },
+    },
     client: {
       mocha: {
         timeout: 10000,
